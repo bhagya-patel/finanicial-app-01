@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Transaction = require('./Transaction.model');
-const verifyToken = require('../middlewares/authMiddleware');
+const verifyToken = require('./middlewares/authMiddleware');
 router.get('/', verifyToken, async (req, res) => {
   const { category, startDate, endDate, type } = req.query;
   const userId = req.user.id;
