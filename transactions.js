@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Transaction = require('../models/Transaction.model');
+const Transaction = require('./Transaction.model');
 const verifyToken = require('../middlewares/authMiddleware');
 router.get('/', verifyToken, async (req, res) => {
   const { category, startDate, endDate, type } = req.query;
